@@ -3,7 +3,7 @@ import itertools
 
 def get_pf(T):
     products = itertools.product(T, T)
-    return any(x.startswith(y) for x, y in products if x != y)
+    return not any(x.startswith(y) for x, y in products if x != y)
 
 
 def remove_prefix(prefix, S):
